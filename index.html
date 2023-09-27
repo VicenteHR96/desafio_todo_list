@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/72d28c97fa.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Todo List</h1>
+      </header>
+      <main>
+        <div class="recuadro">
+          <div class="container-agregar">
+            <div class="title-agregar"><h3>Nueva tarea</h3></div>
+            <div class="action-agregar">
+              <div class="cont-input">
+                <input type="text" id="input-tarea" />
+                <h4 id="alerta"></h4>
+              </div>
+              <i
+                class="fa-solid fa-circle-plus fa-lg btn-agregar"
+                style="color: #ffffff"
+                onclick="agregarTarea()"
+              ></i>
+            </div>
+          </div>
+          <div class="container-desglose">
+            <div class="recount-desglose">
+              <div class="cont-recount">
+                <h3>Total:</h3>
+                <span id="total">0</span>
+              </div>
+              <div class="cont-recount">
+                <h3>Realizadas:</h3>
+                <span id="realizadas">0</span>
+              </div>
+            </div>
+            <div class="detail-desglose">
+              <div class="id">
+                <h3><b>ID</b></h3>
+                <ul id="id-list"></ul>
+              </div>
+              <div class="tarea">
+                <h3><b>Tarea</b></h3>
+                <ul id="tarea-list"></ul>
+              </div>
+              <div class="title-realizadas">
+                <h3><b>Realizadas</b></h3>
+                <ul id="realizadas-list"></ul>
+              </div>
+              <div class="title-eliminar">
+                <h3><b>Eliminar</b></h3>
+                <ul id="eliminar-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- js -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
