@@ -19,7 +19,7 @@
   <body>
     <div class="container">
       <header>
-        <h1>Todo List</h1>
+        <h1>To Do List</h1>
       </header>
       <main>
         <div class="recuadro">
@@ -32,7 +32,6 @@
               </div>
               <i
                 class="fa-solid fa-circle-plus fa-lg btn-agregar"
-                style="color: #ffffff"
                 onclick="agregarTarea()"
               ></i>
             </div>
@@ -49,22 +48,21 @@
               </div>
             </div>
             <div class="detail-desglose">
-              <div class="id">
-                <h3><b>ID</b></h3>
-                <ul id="id-list"></ul>
+              <div class="titles">
+                <div class="id">
+                  <h3><b>ID</b></h3>
+                </div>
+                <div class="tarea">
+                  <h3><b>Tarea</b></h3>
+                </div>
+                <div class="title-realizadas">
+                  <h3><b>Realizadas</b></h3>
+                </div>
+                <div class="title-eliminar">
+                  <h3><b>Eliminar</b></h3>
+                </div>
               </div>
-              <div class="tarea">
-                <h3><b>Tarea</b></h3>
-                <ul id="tarea-list"></ul>
-              </div>
-              <div class="title-realizadas">
-                <h3><b>Realizadas</b></h3>
-                <ul id="realizadas-list"></ul>
-              </div>
-              <div class="title-eliminar">
-                <h3><b>Eliminar</b></h3>
-                <ul id="eliminar-list"></ul>
-              </div>
+              <div class="rows"></div>
             </div>
           </div>
         </div>

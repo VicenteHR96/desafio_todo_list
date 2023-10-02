@@ -1,9 +1,6 @@
 const tareas = [];
 const alerta = document.querySelector("#alerta");
-const idList = document.querySelector("#id-list");
-const tareaList = document.querySelector("#tarea-list");
-const realizadasList = document.querySelector("#realizadas-list");
-const eliminarList = document.querySelector("#eliminar-list");
+const rows = document.querySelector(".rows");
 const total = document.querySelector("#total");
 const realizadas = document.querySelector("#realizadas");
 let siguienteId = 1;
@@ -30,29 +27,16 @@ const agregarTarea = () => {
 //Actualizar lista
 
 const actualizarLista = function () {
-  let htmlElementoId = "";
+  let htmlElementoRows = "";
   for (let tarea of tareas) {
-    htmlElementoId += `<li>${tarea.id}</li>`;
+    htmlElementoRows += `
+    <div class="id-rows">${tarea.id}</div>
+    <div class="tarea-rows">${tarea.nombreTarea}</div>
+    <div class="realizada-rows"><input type="checkbox" class="checkbox" id="checkbox_${tarea.id}"></div>
+    <div class="eliminar-rows"><i class="fa-solid fa-circle-minus fa-xs" style="color: #ff0000;" onClick="eliminarTarea(${tarea.id})"></i></div>
+  `;
   }
-  idList.innerHTML = htmlElementoId;
-
-  let htmlElementoTarea = "";
-  for (let tarea of tareas) {
-    htmlElementoTarea += `<li>${tarea.nombreTarea}</li>`;
-  }
-  tareaList.innerHTML = htmlElementoTarea;
-
-  let htmlElementoRealizadas = "";
-  for (let tarea of tareas) {
-    htmlElementoRealizadas += `<li><input type="checkbox" class="checkbox" id="checkbox_${tarea.id}"></li>`;
-  }
-  realizadasList.innerHTML = htmlElementoRealizadas;
-
-  let htmlElementoEliminar = "";
-  for (let tarea of tareas) {
-    htmlElementoEliminar += `<li><i class="fa-solid fa-circle-minus fa-xs" style="color: #ff0000;" onClick="eliminarTarea(${tarea.id})"></i></li>`;
-  }
-  eliminarList.innerHTML = htmlElementoEliminar;
+  rows.innerHTML = htmlElementoRows;
 
   total.innerHTML = tareas.length;
   const checkboxes = document.querySelectorAll(".checkbox");
@@ -72,8 +56,6 @@ const eliminarTarea = function (id) {
 };
 
 actualizarLista();
-
-//Contador
 
 // Actualizar contador de tareas realizadas
 const actualizarRealizadas = () => {
